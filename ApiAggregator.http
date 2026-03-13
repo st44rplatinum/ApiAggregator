@@ -1,0 +1,14 @@
+@ApiAggregator_HostAddress = http://localhost:5292
+
+### 1) Get a JWT (no body required – simplest version)
+POST {{ApiAggregator_HostAddress}}/api/token
+Content-Type: application/json
+
+### 2) Use the token: copy "token" from response into the header below, then run this request
+# GET {{ApiAggregator_HostAddress}}/api/aggregate
+# Authorization: Bearer YOUR_TOKEN_HERE
+
+### 3) Without token – should return 401
+GET {{ApiAggregator_HostAddress}}/api/aggregate
+
+###
